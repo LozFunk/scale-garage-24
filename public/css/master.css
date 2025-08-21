@@ -1,0 +1,26 @@
+.about{
+    max-width: 800px;
+    height: 300px;
+    background: gray;
+    margin:0 auto;
+}
+
+.about-w{
+    width: 800px;
+}
+
+.pos-logo{
+    position: relative;
+    top: 5px;
+}
+
+.about-img{
+    background-image: url('../images/003A4921-2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.hero{
+    background-image: url('../images/IMG_20250731_084056.png');
+    background-size: cover;
+    background-position: center;
+}
