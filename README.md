@@ -17,16 +17,16 @@ Mini Garage is a Laravel-based web application for managing car models, images, 
 ![Home](screenshots/home.png)
 
 ### Showroom
-![Car List](screenshots/showroom.png)
+![Showroom](screenshots/showroom.png)
 
 ### Car Details
 ![Car Detail](screenshots/details-page.png)
 
 ### Registration Form
-![Dashboard](screenshots/registration-form.png)
+![Registration Form](screenshots/registration-form.png)
 
 ### Upload Form
-![Car Management](screenshots/upload-form.png)
+![Car Upload](screenshots/upload-form.png)
 
 
 ## Project Structure
