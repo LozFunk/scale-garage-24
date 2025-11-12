@@ -1,4 +1,4 @@
-# Mini Garage
+# Scale Garage 24
 
 Mini Garage is a Laravel-based web application for managing car models, images, comments, and users.
 
