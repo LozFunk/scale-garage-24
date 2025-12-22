@@ -18,15 +18,3 @@ require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $app->handleRequest(Request::capture());
-
-# after COPY . .
-RUN apt-get update && apt-get install -y zip unzip git \
- && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
- && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
- && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
-
-# optional: run storage link at runtime instead of build
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["apache2-foreground"]

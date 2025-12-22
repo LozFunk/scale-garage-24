@@ -7,6 +7,16 @@ RUN docker-php-ext-install pdo pdo_mysql \
 
 COPY . .
 
+RUN apt-get update && apt-get install -y zip unzip git \
+ && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+ && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+ && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+# optional: run storage link at runtime instead of build
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
+
 # Set Apache DocumentRoot to Laravel public folder
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
     && chown -R www-data:www-data /var/www/html \
