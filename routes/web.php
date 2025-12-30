@@ -44,4 +44,12 @@ Route::middleware('auth')->group(function () {
     Route::post('car-models/{carModel}/comments', [CommentController::class, 'store'])->name('comments.store');
 });
 
+Route::get('/db-info', function () {
+    return [
+        'db' => \DB::connection()->getDatabaseName(),
+        'host' => \DB::connection()->getConfig('host'),
+        'user' => \DB::connection()->getConfig('username'),
+    ];
+});
+
 require __DIR__.'/auth.php';
